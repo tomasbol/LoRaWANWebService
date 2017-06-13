@@ -3,7 +3,19 @@
 1. Introduction
 ----------------
 
-The aim of this project is to implement a web service via IPv6, UDP and CoAP on LoRaWAN devices. SCHC (as described in the Internet-Draft of the lpwan IETF WG: https://datatracker.ietf.org/doc/draft-ietf-lpwan-ipv6-static-context-hc/) is used to compress the header of the IPv6 and UDP protocol. LwIP is used to provide an IPv6 stack on the used hardware platform (SK-iM880A).
+The aim of this project is to implement a web service via IPv6, UDP and CoAP on LoRaWAN devices. SCHC (as described in the Internet-Draft of the lpwan IETF WG: https://datatracker.ietf.org/doc/draft-ietf-lpwan-ipv6-static-context-hc/) is used to compress the header of the IPv6 and UDP protocol. LwIP is used to provide an IPv6 stack on the used hardware platform (SK-iM880A). The LoRaMAC code developed by Semtech is used for this project.
+
+2. Interfaces & Code
+----------------
+Three extra LwIP interfaces were created for this project
+-virtualloraif: is responsible for the connection between the LoRaMAC code and the LwIP (L2 <-> L3, L4, L5)
+-schcCompressor: this interfaces provides the functionality for a SCHC compressor and a decompressor
+-CoAP interface: this interface provides the CoAP client functionality.
+
+They first two interfaces are located in the \LwIP\netif folder.
+
+For the implementation of the CoAP client the PicoCoAP library was used. 
+The code can be found in: \LwIP\apps\picocoap
 
 3. Acknowledgments
 -------------------
