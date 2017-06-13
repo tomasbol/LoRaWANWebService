@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Project version="2G - 2.0.1" name="LoRaMacClassA-api-v3">
+  <Target name="LoRaMacClassA-api-v3" isCurrent="1">
+    <Device manufacturerId="9" manufacturerName="ST" chipId="529" chipName="STM32L151CB" boardId="" boardName=""/>
+    <BuildOption>
+      <Compile>
+        <Option name="OptimizationLevel" value="4"/>
+        <Option name="UseFPU" value="0"/>
+        <Option name="UserEditCompiler" value="-std=c99"/>
+        <Option name="SupportCPlusplus" value="0"/>
+        <Includepaths>
+          <Includepath path="../../../../src"/>
+          <Includepath path="../../../../src/boards/SK-iM880A"/>
+          <Includepath path="../../../../src/boards/SK-iM880A/cmsis"/>
+          <Includepath path="../../../../src/boards/mcu/stm32"/>
+          <Includepath path="../../../../src/boards/mcu/stm32/cmsis"/>
+          <Includepath path="../../../../src/boards/mcu/stm32/stm32l1xx_HAL_Driver/inc"/>
+          <Includepath path="../../../../src/mac"/>
+          <Includepath path="../../../../src/peripherals"/>
+          <Includepath path="../../../../src/radio"/>
+          <Includepath path="../../../../src/system"/>
+          <Includepath path="../../../../src/system/crypto"/>
+        </Includepaths>
+        <DefinedSymbols>
+          <Define name="USE_HAL_DRIVER"/>
+          <Define name="STM32L151xB"/>
+          <Define name="USE_DEBUGGER"/>
+          <Define name="USE_BAND_868"/>
+          <Define name="STM32L151CB"/>
+          <Define name="STM32L1XX_MD"/>
+        </DefinedSymbols>
+      </Compile>
+      <Link useDefault="0">
+        <Option name="DiscardUnusedSection" value="0"/>
+        <Option name="UserEditLinkder" value=""/>
+        <Option name="UseMemoryLayout" value="0"/>
+        <Option name="nostartfiles" value="0"/>
+        <Option name="LTO" value="0"/>
+        <Option name="IsNewStartupCode" value="1"/>
+        <Option name="Library" value="Not use C Library"/>
+        <Option name="UserEditLinker" value="-lc;-lm; -lrdimon; "/>
+        <LinkedLibraries/>
+        <MemoryAreas debugInFlashNotRAM="1">
+          <Memory name="IROM1" type="ReadOnly" size="0x00020000" startValue="0x08000000"/>
+          <Memory name="IRAM1" type="ReadWrite" size="0x00004000" startValue="0x20000000"/>
+          <Memory name="IROM2" type="ReadOnly" size="" startValue=""/>
+          <Memory name="IRAM2" type="ReadWrite" size="" startValue=""/>
+        </MemoryAreas>
+        <LocateLinkFile path="../../../../src/boards/SK-iM880A/cmsis/arm-gcc/stm32l1xx_md_flash.ld" type="0"/>
+      </Link>
+      <Output>
+        <Option name="OutputFileType" value="0"/>
+        <Option name="Path" value="./"/>
+        <Option name="Name" value="LoRaMacClassA-api-v3"/>
+        <Option name="HEX" value="1"/>
+        <Option name="BIN" value="1"/>
+      </Output>
+      <User>
+        <UserRun name="Run#1" type="Before" checked="0" value=""/>
+        <UserRun name="Run#1" type="After" checked="0" value=""/>
+      </User>
+    </BuildOption>
+    <DebugOption>
+      <Option name="org.coocox.codebugger.gdbjtag.core.adapter" value="ST-Link"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.debugMode" value="SWD"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.clockDiv" value="1M"/>
+      <Option name="org.coocox.codebugger.gdbjtag.corerunToMain" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.jlinkgdbserver" value=""/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.userDefineGDBScript" value=""/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.targetEndianess" value="0"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.jlinkResetMode" value="Type 0: Normal"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.resetMode" value="SYSRESETREQ"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.ifSemihost" value="0"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.ifCacheRom" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.ipAddress" value="127.0.0.1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.portNumber" value="2009"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.autoDownload" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.verify" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.downloadFuction" value="Erase Effected"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.defaultAlgorithm" value="STM32L1xx_128.elf"/>
+    </DebugOption>
+    <ExcludeFile/>
+  </Target>
+  <Components path="./"/>
+  <Files>
+    <File name="include/lwip/apps/snmp_core.h" path="../../../../LwIP/include/lwip/apps/snmp_core.h" type="1"/>
+    <File name="include/lwip/prot/ip4.h" path="../../../../LwIP/include/lwip/prot/ip4.h" type="1"/>
+    <File name="netif/ppp/polarssl" path="" type="2"/>
+    <File name="boards" path="" type="2"/>
+    <File name="boards/SK-iM880A/STM32L1xx_HAL_Driver/stm32l1xx_hal_uart.c" path="../../../../src/boards/mcu/stm32/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.c" type="1"/>
+    <File name="include/lwip/apps/FILES" path="../../../../LwIP/include/lwip/apps/FILES" type="1"/>
+    <File name="netif/ppp/pppapi.c" path="../../../../LwIP/netif/ppp/pppapi.c" type="1"/>
+    <File name="apps/picocoap/coapClient.h" path="../../../../LwIP/apps/picocoap/coapClient.h" type="1"/>
+    <File name="boards/SK-iM880A/spi-board.c" path="../../../../src/boards/SK-iM880A/spi-board.c" type="1"/>
+    <File name="netif/ppp/utils.c" path="../../../../LwIP/netif/ppp/utils.c" type="1"/>
+    <File name="include/lwip/prot/ip.h" path="../../../../LwIP/include/lwip/prot/ip.h" type="1"/>
+    <File name="apps/main-api-v3.c" path="../../../../src/apps/LoRaMac/classA/SK-iM880A/main-api-v3.c" type="1"/>
+    <File name="netif/ppp/demand.c" path="../../../../LwIP/netif/ppp/demand.c" type="1"/>
+    <File name="include/lwip/apps/mdns_priv.h" path="../../../../LwIP/include/lwip/apps/mdns_priv.h" type="1"/>
+    <File name="core/ipv6/nd6.c" path="../../../../LwIP/core/ipv6/nd6.c" type="1"/>
+    <File name="boards/SK-iM880A" path="" type="2"/>
+    <File name="include/netif/lowpan6_opts.h" path="../../../../LwIP/include/netif/lowpan6_opts.h" type="1"/>
+    <File name="include/lwip/pbuf.h" path="../../../../LwIP/include/lwip/pbuf.h" type="1"/>
+    <File name="mac/LoRaMac.c" path="../../../../src/mac/LoRaMac.c" type="1"/>
+    <File name="core/ipv6/dhcp6.c" path="../../../../LwIP/core/ipv6/dhcp6.c" type="1"/>
+    <File name="system" path="" type="2"/>
+    <File name="apps/picocoap/coapClient.c" path="../../../../LwIP/apps/picocoap/coapClient.c" type="1"/>
+    <File name="apps/picocoap/coap.c" path="../../../../LwIP/apps/picocoap/coap.c" type="1"/>
+    <File name="include/lwip/icmp6.h" path="../../../../LwIP/include/lwip/icmp6.h" type="1"/>
+    <File name="system/uart.c" path="../../../../src/system/uart.c" type="1"/>
+    <File name="include/lwip/arch/cc.h" path="../../../../LwIP/include/lwip/arch/cc.h" type="1"/>
+    <File name="core/def.c" path="../../../../LwIP/core/def.c" type="1"/>
+    <File name="include/lwip/netdb.h" path="../../../../LwIP/include/lwip/netdb.h" type="1"/>
+    <File name="include/lwip/apps/mqtt.h" path="../../../../LwIP/include/lwip/apps/mqtt.h" type="1"/>
+    <File name="apps" path="" type="2"/>
+    <File name="include/lwip/apps/snmpv3.h" path="../../../../LwIP/include/lwip/apps/snmpv3.h" type="1"/>
+    <File name="include/lwip/udp.h" path="../../../../LwIP/include/lwip/udp.h" type="1"/>
+    <File name="include/lwip/apps" path="" type="2"/>
+    <File name="include/lwip/ip.h" path="../../../../LwIP/include/lwip/ip.h" type="1"/>
+    <File name="include/lwip/def.h" path="../../../../LwIP/include/lwip/def.h" type="1"/>
+    <File name="include/lwip/apps/httpd.h" path="../../../../LwIP/include/lwip/apps/httpd.h" type="1"/>
+    <File name="include/lwip/apps/snmp_threadsync.h" path="../../../../LwIP/include/lwip/apps/snmp_threadsync.h" type="1"/>
+    <File name="netif/ppp/pppos.c" path="../../../../LwIP/netif/ppp/pppos.c" type="1"/>
+    <File name="include/netif/ethernet.h" path="../../../../LwIP/include/netif/ethernet.h" type="1"/>
+    <File name="include/posix/sys" path="" type="2"/>
+    <File name="include/lwip/apps/snmp_scalar.h" path="../../../../LwIP/include/lwip/apps/snmp_scalar.h" type="1"/>
+    <File name="include/lwip/apps/tftp_opts.h" path="../../../../LwIP/include/lwip/apps/tftp_opts.h" type="1"/>
+    <File name="mac/LoRaMacCrypto.c" path="../../../../src/mac/LoRaMacCrypto.c" type="1"/>
+    <File name="netif/ppp/vj.c" path="../../../../LwIP/netif/ppp/vj.c" type="1"/>
+    <File name="netif/ppp/mppe.c" path="../../../../LwIP/netif/ppp/mppe.c" type="1"/>
+    <File name="include/lwip/priv/memp_priv.h" path="../../../../LwIP/include/lwip/priv/memp_priv.h" type="1"/>
+    <File name="include/lwip/netbuf.h" path="../../../../LwIP/include/lwip/netbuf.h" type="1"/>
+    <File name="system/delay.c" path="../../../../src/system/delay.c" type="1"/>
+    <File name="include" path="" type="2"/>
+    <File name="core/inet_chksum.c" path="../../../../LwIP/core/inet_chksum.c" type="1"/>
+    <File name="include/lwip/sio.h" path="../../../../LwIP/include/lwip/sio.h" type="1"/>
+    <File name="include/netif/ppp/chap-new.h" path="../../../../LwIP/include/netif/ppp/chap-new.h" type="1"/>
+    <File name="include/lwip/apps/tftp_server.h" path="../../../../LwIP/include/lwip/apps/tftp_server.h" type="1"/>
+    <File name="include/lwip/priv/nd6_priv.h" path="../../../../LwIP/include/lwip/priv/nd6_priv.h" type="1"/>
+    <File name="netif/ppp/PPPD_FOLLOWUP" path="../../../../LwIP/netif/ppp/PPPD_FOLLOWUP" type="1"/>
+    <File name="mac/LoRaMac-api-v3.c" path="../../../../src/mac/LoRaMac-api-v3.c" type="1"/>
+    <File name="apps/LoRaMac/classA" path="" type="2"/>
+    <File name="include/lwip/init.h" path="../../../../LwIP/include/lwip/init.h" type="1"/>
+    <File name="core/ipv6/ip6_frag.c" path="../../../../LwIP/core/ipv6/ip6_frag.c" type="1"/>
+    <File name="include/lwip/netifapi.h" path="../../../../LwIP/include/lwip/netifapi.h" type="1"/>
+    <File name="boards/SK-iM880A/gpio-board.c" path="../../../../src/boards/SK-iM880A/gpio-board.c" type="1"/>
+    <File name="include/lwip/priv/tcpip_priv.h" path="../../../../LwIP/include/lwip/priv/tcpip_priv.h" type="1"/>
+    <File name="include/lwip/snmp.h" path="../../../../LwIP/include/lwip/snmp.h" type="1"/>
+    <File name="boards/SK-iM880A/STM32L1xx_HAL_Driver/stm32l1xx_hal_i2c.c" path="../../../../src/boards/mcu/stm32/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.c" type="1"/>
+    <File name="include/lwip/prot/nd6.h" path="../../../../LwIP/include/lwip/prot/nd6.h" type="1"/>
+    <File name="boards/SK-iM880A/cmsis" path="" type="2"/>
+    <File name="include/lwip/arch.h" path="../../../../LwIP/include/lwip/arch.h" type="1"/>
+    <File name="core/netif.c" path="../../../../LwIP/core/netif.c" type="1"/>
+    <File name="include/netif/ppp/ecp.h" path="../../../../LwIP/include/netif/ppp/ecp.h" type="1"/>
+    <File name="apps/LoRaMac" path="" type="2"/>
+    <File name="include/lwip/apps/lwiperf.h" path="../../../../LwIP/include/lwip/apps/lwiperf.h" type="1"/>
+    <File name="boards/SK-iM880A/STM32L1xx_HAL_Driver/stm32l1xx_hal_adc_ex.c" path="../../../../src/boards/mcu/stm32/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.c" type="1"/>
+    <File name="boards/SK-iM880A/STM32L1xx_HAL_Driver/stm32l1xx_hal_dma.c" path="../../../../src/boards/mcu/stm32/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c" type="1"/>
+    <File name="include/netif/ppp/upap.h" path="../../../../LwIP/include/netif/ppp/upap.h" type="1"/>
+    <File name="include/lwip/tcp.h" path="../../../../LwIP/include/lwip/tcp.h" type="1"/>
+    <File name="include/lwip/apps/snmp.h" path="../../../../LwIP/include/lwip/apps/snmp.h" type="1"/>
+    <File name="boards/SK-iM880A/STM32L1xx_HAL_Driver/stm32l1xx_hal_gpio.c" path="../../../../src/boards/mcu/stm32/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c" type="1"/>
+    <File name="boards/SK-iM880A/STM32L1xx_HAL_Driver/stm32l1xx_hal_spi.c" path="../../../../src/boards/mcu/stm32/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.c" type="1"/>
+    <File name="include/lwip/apps/snmp_table.h" path="../../../../LwIP/include/lwip/apps/snmp_table.h" type="1"/>
+    <File name="include/lwip/ip6_addr.h" path="../../../../LwIP/include/lwip/ip6_addr.h" type="1"/>
+    <File name="include/lwip/stats.h" path="../../../../LwIP/include/lwip/stats.h" type="1"/>
+    <File name="netif/ppp" path="" type="2"/>
+    <File name="boards/mcu/stm32" path="" type="2"/>
+    <File name="include/netif/etharp.h" path="../../../../LwIP/include/netif/etharp.h" type="1"/>
+    <File name="include/lwip/prot/udp.h" path="../../../../LwIP/include/lwip/prot/udp.h" type="1"/>
+    <File name="include/lwip/err.h" path="../../../../LwIP/include/lwip/err.h" type="1"/>
+    <File name="core/mem.c" path="../../../../LwIP/core/mem.c" type="1"/>
+    <File name="include/lwip/autoip.h" path="../../../../LwIP/include/lwip/autoip.h" type="1"/>
+    <File name="core" path="" type="2"/>
+    <File name="include/lwip/prot/etharp.h" path="../../../../LwIP/include/lwip/prot/etharp.h" type="1"/>
+    <File name="netif/ppp/multilink.c" path="../../../../LwIP/netif/ppp/multilink.c" type="1"/>
+    <File name="system/timer.c" path="../../../../src/system/timer.c" type="1"/>
+    <File name="netif/schcCompressor.c" path="../../../../LwIP/netif/schcCompressor.c" type="1"/>
+    <File name="netif/lowpan6.c" path="../../../../LwIP/netif/lowpan6.c" type="1"/>
+    <File name="include/lwip/ip4_addr.h" path="../../../../LwIP/include/lwip/ip4_addr.h" type="1"/>
+    <File name="netif/slipif.c" path="../../../../LwIP/netif/slipif.c" type="1"/>
+    <File name="netif/ppp/chap_ms.c" path="../../../../LwIP/netif/ppp/chap_ms.c" type="1"/>
+    <File name="include/lwip/apps/sntp.h" path="../../../../LwIP/include/lwip/apps/sntp.h" type="1"/>
+    <File name="boards/SK-iM880A/board.c" path="../../../../src/boards/SK-iM880A/board.c" type="1"/>
+    <File name="boards/SK-iM880A/STM32L1xx_HAL_Driver/stm32l1xx_hal_rtc_ex.c" path="../../../../src/boards/mcu/stm32/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rtc_ex.c" type="1"/>
+    <File name="boards/mcu/stm32/utilities.c" path="../../../../src/boards/mcu/stm32/utilities.c" type="1"/>
+    <File name="apps/udpecho_raw/udpecho_raw.c" path="../../../../src/apps/udpecho_raw/udpecho_raw.c" type="1"/>
+    <File name="boards/SK-iM880A/STM32L1xx_HAL_Driver/stm32l1xx_hal_cortex.c" path="../../../../src/boards/mcu/stm32/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c" type="1"/>
+    <File name="netif/ppp/polarssl/des.c" path="../../../../LwIP/netif/ppp/polarssl/des.c" type="1"/>
+    <File name="system/crypto/cmac.c" path="../../../../src/system/crypto/cmac.c" type="1"/>
+    <File name="include/lwip/mem.h" path="../../../../LwIP/include/lwip/mem.h" type="1"/>
+    <File name="netif/ppp/auth.c" path="../../../../LwIP/netif/ppp/auth.c" type="1"/>
+    <File name="include/netif/ppp/pppos.h" path="../../../../LwIP/include/netif/ppp/pppos.h" type="1"/>
+    <File name="include/netif/ppp/ppp_opts.h" path="../../../../LwIP/include/netif/ppp/ppp_opts.h" type="1"/>
+    <File name="include/lwip/prot/mld6.h" path="../../../../LwIP/include/lwip/prot/mld6.h" type="1"/>
+    <File name="include/lwip/arch" path="" type="2"/>
+    <File name="include/netif/ppp/chap-md5.h" path="../../../../LwIP/include/netif/ppp/chap-md5.h" type="1"/>
+    <File name="boards/SK-iM880A/STM32L1xx_HAL_Driver/stm32l1xx_hal_pwr.c" path="../../../../src/boards/mcu/stm32/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c" type="1"/>
+    <File name="core/stats.c" path="../../../../LwIP/core/stats.c" type="1"/>
+    <File name="core/pbuf.c" path="../../../../LwIP/core/pbuf.c" type="1"/>
+    <File name="include/posix/sys/socket.h" path="../../../../LwIP/include/posix/sys/socket.h" type="1"/>
+    <File name="apps/udpecho_raw" path="" type="2"/>
+    <File name="include/lwip/apps/fs.h" path="../../../../LwIP/include/lwip/apps/fs.h" type="1"/>
+    <File name="include/netif/ppp/pppcrypt.h" path="../../../../LwIP/include/netif/ppp/pppcrypt.h" type="1"/>
+    <File name="include/lwip/errno.h" path="../../../../LwIP/include/lwip/errno.h" type="1"/>
+    <File name="include/lwip/prot/ip6.h" path="../../../../LwIP/include/lwip/prot/ip6.h" type="1"/>
+    <File name="include/lwip/priv/tcp_priv.h" path="../../../../LwIP/include/lwip/priv/tcp_priv.h" type="1"/>
+    <File name="apps/picocoap" path="" type="2"/>
+    <File name="include/netif/ppp/polarssl/des.h" path="../../../../LwIP/include/netif/ppp/polarssl/des.h" type="1"/>
+    <File name="include/lwip/apps/mdns_opts.h" path="../../../../LwIP/include/lwip/apps/mdns_opts.h" type="1"/>
+    <File name="netif/ppp/pppol2tp.c" path="../../../../LwIP/netif/ppp/pppol2tp.c" type="1"/>
+    <File name="netif/ppp/eap.c" path="../../../../LwIP/netif/ppp/eap.c" type="1"/>
+    <File name="boards/SK-iM880A/cmsis/startup_stm32l1xx_md.s" path="../../../../src/boards/SK-iM880A/cmsis/arm-gcc/startup_stm32l1xx_md.s" type="1"/>
+    <File name="include/netif/slipif.h" path="../../../../LwIP/include/netif/slipif.h" type="1"/>
+    <File name="boards/SK-iM880A/STM32L1xx_HAL_Driver/stm32l1xx_hal_rcc.c" path="../../../../src/boards/mcu/stm32/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c" type="1"/>
+    <File name="boards/SK-iM880A/adc-board.c" path="../../../../src/boards/SK-iM880A/adc-board.c" type="1"/>
+    <File name="boards/SK-iM880A/uart-board.c" path="../../../../src/boards/SK-iM880A/uart-board.c" type="1"/>
+    <File name="include/lwip/prot/igmp.h" path="../../../../LwIP/include/lwip/prot/igmp.h" type="1"/>
+    <File name="system/gpio.c" path="../../../../src/system/gpio.c" type="1"/>
+    <File name="include/lwip/etharp.h" path="../../../../LwIP/include/lwip/etharp.h" type="1"/>
+    <File name="system/adc.c" path="../../../../src/system/adc.c" type="1"/>
+    <File name="boards/SK-iM880A/STM32L1xx_HAL_Driver/stm32l1xx_hal_pwr_ex.c" path="../../../../src/boards/mcu/stm32/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c" type="1"/>
+    <File name="netif/ppp/upap.c" path="../../../../LwIP/netif/ppp/upap.c" type="1"/>
+    <File name="include/posix" path="" type="2"/>
+    <File name="include/netif/ppp/pppapi.h" path="../../../../LwIP/include/netif/ppp/pppapi.h" type="1"/>
+    <File name="core/udp.c" path="../../../../LwIP/core/udp.c" type="1"/>
+    <File name="include/lwip/dhcp.h" path="../../../../LwIP/include/lwip/dhcp.h" type="1"/>
+    <File name="core/tcp_out.c" path="../../../../LwIP/core/tcp_out.c" type="1"/>
+    <File name="include/netif/ppp/magic.h" path="../../../../LwIP/include/netif/ppp/magic.h" type="1"/>
+    <File name="include/lwip/nd6.h" path="../../../../LwIP/include/lwip/nd6.h" type="1"/>
+    <File name="include/netif/ppp/polarssl/sha1.h" path="../../../../LwIP/include/netif/ppp/polarssl/sha1.h" type="1"/>
+    <File name="include/lwip/priv/memp_std.h" path="../../../../LwIP/include/lwip/priv/memp_std.h" type="1"/>
+    <File name="netif/ppp/eui64.c" path="../../../../LwIP/netif/ppp/eui64.c" type="1"/>
+    <File name="include/netif/ppp/ipcp.h" path="../../../../LwIP/include/netif/ppp/ipcp.h" type="1"/>
+    <File name="include/lwip/apps/netbiosns_opts.h" path="../../../../LwIP/include/lwip/apps/netbiosns_opts.h" type="1"/>
+    <File name="include/lwip/sockets.h" path="../../../../LwIP/include/lwip/sockets.h" type="1"/>
+    <File name="include/lwip/apps/sntp_opts.h" path="../../../../LwIP/include/lwip/apps/sntp_opts.h" type="1"/>
+    <File name="include/lwip/prot/tcp.h" path="../../../../LwIP/include/lwip/prot/tcp.h" type="1"/>
+    <File name="boards/SK-iM880A/STM32L1xx_HAL_Driver/stm32l1xx_hal_rtc.c" path="../../../../src/boards/mcu/stm32/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rtc.c" type="1"/>
+    <File name="radio" path="" type="2"/>
+    <File name="netif/ethernetif.c" path="../../../../LwIP/netif/ethernetif.c" type="1"/>
+    <File name="include/lwip/tcpip.h" path="../../../../LwIP/include/lwip/tcpip.h" type="1"/>
+    <File name="include/lwip/apps/mdns.h" path="../../../../LwIP/include/lwip/apps/mdns.h" type="1"/>
+    <File name="include/netif/ppp/vj.h" path="../../../../LwIP/include/netif/ppp/vj.h" type="1"/>
+    <File name="include/lwip/inet.h" path="../../../../LwIP/include/lwip/inet.h" type="1"/>
+    <File name="include/lwip/raw.h" path="../../../../LwIP/include/lwip/raw.h" type="1"/>
+    <File name="include/lwip/igmp.h" path="../../../../LwIP/include/lwip/igmp.h" type="1"/>
+    <File name="include/lwip/dhcp6.h" path="../../../../LwIP/include/lwip/dhcp6.h" type="1"/>
+    <File name="include/netif/ppp/chap_ms.h" path="../../../../LwIP/include/netif/ppp/chap_ms.h" type="1"/>
+    <File name="core/timeouts.c" path="../../../../LwIP/core/timeouts.c" type="1"/>
+    <File name="include/lwip/ip6_frag.h" path="../../../../LwIP/include/lwip/ip6_frag.h" type="1"/>
+    <File name="include/netif/ppp/ipv6cp.h" path="../../../../LwIP/include/netif/ppp/ipv6cp.h" type="1"/>
+    <File name="include/netif/virtualloraif.h" path="../../../../LwIP/include/netif/virtualloraif.h" type="1"/>
+    <File name="netif/ppp/ppp.c" path="../../../../LwIP/netif/ppp/ppp.c" type="1"/>
+    <File name="include/lwip/arch/cpu.h" path="../../../../LwIP/include/lwip/arch/cpu.h" type="1"/>
+    <File name="include/lwip/timeouts.h" path="../../../../LwIP/include/lwip/timeouts.h" type="1"/>
+    <File name="include/lwip/priv" path="" type="2"/>
+    <File name="include/lwip/mld6.h" path="../../../../LwIP/include/lwip/mld6.h" type="1"/>
+    <File name="include/lwip/prot/icmp.h" path="../../../../LwIP/include/lwip/prot/icmp.h" type="1"/>
+    <File name="core/ipv6" path="" type="2"/>
+    <File name="core/dns.c" path="../../../../LwIP/core/dns.c" type="1"/>
+    <File name="netif/ppp/chap-new.c" path="../../../../LwIP/netif/ppp/chap-new.c" type="1"/>
+    <File name="include/netif/ppp/fsm.h" path="../../../../LwIP/include/netif/ppp/fsm.h" type="1"/>
+    <File name="netif/ppp/polarssl/md5.c" path="../../../../LwIP/netif/ppp/polarssl/md5.c" type="1"/>
+    <File name="core/sys.c" path="../../../../LwIP/core/sys.c" type="1"/>
+    <File name="include/lwip/prot/autoip.h" path="../../../../LwIP/include/lwip/prot/autoip.h" type="1"/>
+    <File name="netif/ppp/polarssl/sha1.c" path="../../../../LwIP/netif/ppp/polarssl/sha1.c" type="1"/>
+    <File name="include/lwip/apps/snmp_mib2.h" path="../../../../LwIP/include/lwip/apps/snmp_mib2.h" type="1"/>
+    <File name="include/lwip/debug.h" path="../../../../LwIP/include/lwip/debug.h" type="1"/>
+    <File name="include/netif/ppp/ppp_impl.h" path="../../../../LwIP/include/netif/ppp/ppp_impl.h" type="1"/>
+    <File name="boards/SK-iM880A/sx1272-board.c" path="../../../../src/boards/SK-iM880A/sx1272-board.c" type="1"/>
+    <File name="boards/SK-iM880A/STM32L1xx_HAL_Driver/stm32l1xx_hal_rcc_ex.c" path="../../../../src/boards/mcu/stm32/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c" type="1"/>
+    <File name="core/ipv6/ip6_addr.c" path="../../../../LwIP/core/ipv6/ip6_addr.c" type="1"/>
+    <File name="core/ipv6/mld6.c" path="../../../../LwIP/core/ipv6/mld6.c" type="1"/>
+    <File name="boards/SK-iM880A/cmsis/system_stm32l1xx.c" path="../../../../src/boards/SK-iM880A/cmsis/system_stm32l1xx.c" type="1"/>
+    <File name="include/lwip/opt.h" path="../../../../LwIP/include/lwip/opt.h" type="1"/>
+    <File name="include/netif/ppp/pppdebug.h" path="../../../../LwIP/include/netif/ppp/pppdebug.h" type="1"/>
+    <File name="include/lwip/ip4.h" path="../../../../LwIP/include/lwip/ip4.h" type="1"/>
+    <File name="include/posix/netdb.h" path="../../../../LwIP/include/posix/netdb.h" type="1"/>
+    <File name="mac" path="" type="2"/>
+    <File name="include/lwip/api.h" path="../../../../LwIP/include/lwip/api.h" type="1"/>
+    <File name="netif/ppp/ccp.c" path="../../../../LwIP/netif/ppp/ccp.c" type="1"/>
+    <File name="netif/ppp/polarssl/md4.c" path="../../../../LwIP/netif/ppp/polarssl/md4.c" type="1"/>
+    <File name="include/lwip/apps/httpd_opts.h" path="../../../../LwIP/include/lwip/apps/httpd_opts.h" type="1"/>
+    <File name="include/netif/ppp/ppp.h" path="../../../../LwIP/include/netif/ppp/ppp.h" type="1"/>
+    <File name="netif/ppp/lcp.c" path="../../../../LwIP/netif/ppp/lcp.c" type="1"/>
+    <File name="apps/udpecho_raw/udpecho_raw.h" path="../../../../src/apps/udpecho_raw/udpecho_raw.h" type="1"/>
+    <File name="include/netif/lowpan6.h" path="../../../../LwIP/include/netif/lowpan6.h" type="1"/>
+    <File name="include/netif/ppp/polarssl/md5.h" path="../../../../LwIP/include/netif/ppp/polarssl/md5.h" type="1"/>
+    <File name="netif/ppp/chap-md5.c" path="../../../../LwIP/netif/ppp/chap-md5.c" type="1"/>
+    <File name="netif/ppp/pppoe.c" path="../../../../LwIP/netif/ppp/pppoe.c" type="1"/>
+    <File name="include/lwip/prot/icmp6.h" path="../../../../LwIP/include/lwip/prot/icmp6.h" type="1"/>
+    <File name="include/netif/ppp/ccp.h" path="../../../../LwIP/include/netif/ppp/ccp.h" type="1"/>
+    <File name="include/lwip/apps/snmp_opts.h" path="../../../../LwIP/include/lwip/apps/snmp_opts.h" type="1"/>
+    <File name="include/lwip/ip_addr.h" path="../../../../LwIP/include/lwip/ip_addr.h" type="1"/>
+    <File name="include/netif/ppp/polarssl/md4.h" path="../../../../LwIP/include/netif/ppp/polarssl/md4.h" type="1"/>
+    <File name="system/crypto" path="" type="2"/>
+    <File name="include/lwip/prot/dns.h" path="../../../../LwIP/include/lwip/prot/dns.h" type="1"/>
+    <File name="include/lwip/arch/sys_arch.h" path="../../../../LwIP/include/lwip/arch/sys_arch.h" type="1"/>
+    <File name="include/lwip/prot/ethernet.h" path="../../../../LwIP/include/lwip/prot/ethernet.h" type="1"/>
+    <File name="netif/ppp/polarssl/README" path="../../../../LwIP/netif/ppp/polarssl/README" type="1"/>
+    <File name="netif/FILES" path="../../../../LwIP/netif/FILES" type="1"/>
+    <File name="include/netif/ppp/eui64.h" path="../../../../LwIP/include/netif/ppp/eui64.h" type="1"/>
+    <File name="boards/SK-iM880A/STM32L1xx_HAL_Driver/stm32l1xx_hal_adc.c" path="../../../../src/boards/mcu/stm32/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.c" type="1"/>
+    <File name="include/lwip/lwipopts.h" path="../../../../LwIP/include/lwip/lwipopts.h" type="1"/>
+    <File name="include/lwip/ethip6.h" path="../../../../LwIP/include/lwip/ethip6.h" type="1"/>
+    <File name="core/memp.c" path="../../../../LwIP/core/memp.c" type="1"/>
+    <File name="include/netif/ppp/mppe.h" path="../../../../LwIP/include/netif/ppp/mppe.h" type="1"/>
+    <File name="core/ipv6/ethip6.c" path="../../../../LwIP/core/ipv6/ethip6.c" type="1"/>
+    <File name="include/netif/ppp/polarssl" path="" type="2"/>
+    <File name="boards/mcu/stm32/sysIrqHandlers.c" path="../../../../src/boards/mcu/stm32/sysIrqHandlers.c" type="1"/>
+    <File name="core/tcp_in.c" path="../../../../LwIP/core/tcp_in.c" type="1"/>
+    <File name="include/lwip/prot/dhcp.h" path="../../../../LwIP/include/lwip/prot/dhcp.h" type="1"/>
+    <File name="core/ipv6/inet6.c" path="../../../../LwIP/core/ipv6/inet6.c" type="1"/>
+    <File name="include/lwip/apps/mqtt_opts.h" path="../../../../LwIP/include/lwip/apps/mqtt_opts.h" type="1"/>
+    <File name="include/lwip/sys.h" path="../../../../LwIP/include/lwip/sys.h" type="1"/>
+    <File name="include/lwip/prot" path="" type="2"/>
+    <File name="netif/ppp/ipcp.c" path="../../../../LwIP/netif/ppp/ipcp.c" type="1"/>
+    <File name="include/netif/ppp/polarssl/arc4.h" path="../../../../LwIP/include/netif/ppp/polarssl/arc4.h" type="1"/>
+    <File name="core/tcp.c" path="../../../../LwIP/core/tcp.c" type="1"/>
+    <File name="include/lwip/icmp.h" path="../../../../LwIP/include/lwip/icmp.h" type="1"/>
+    <File name="system/fifo.c" path="../../../../src/system/fifo.c" type="1"/>
+    <File name="include/posix/errno.h" path="../../../../LwIP/include/posix/errno.h" type="1"/>
+    <File name="core/ip.c" path="../../../../LwIP/core/ip.c" type="1"/>
+    <File name="boards/SK-iM880A/i2c-board.c" path="../../../../src/boards/SK-iM880A/i2c-board.c" type="1"/>
+    <File name="netif/ppp/pppcrypt.c" path="../../../../LwIP/netif/ppp/pppcrypt.c" type="1"/>
+    <File name="netif/ppp/fsm.c" path="../../../../LwIP/netif/ppp/fsm.c" type="1"/>
+    <File name="system/crypto/aes.c" path="../../../../src/system/crypto/aes.c" type="1"/>
+    <File name="netif/ppp/ecp.c" path="../../../../LwIP/netif/ppp/ecp.c" type="1"/>
+    <File name="include/netif/ppp" path="" type="2"/>
+    <File name="core/ipv6/icmp6.c" path="../../../../LwIP/core/ipv6/icmp6.c" type="1"/>
+    <File name="netif/ethernet.c" path="../../../../LwIP/netif/ethernet.c" type="1"/>
+    <File name="apps/LoRaMac/classA/SK-iM880A/Comissioning.h" path="../../../../src/apps/LoRaMac/classA/SK-iM880A/Comissioning.h" type="1"/>
+    <File name="core/init.c" path="../../../../LwIP/core/init.c" type="1"/>
+    <File name="netif" path="" type="2"/>
+    <File name="include/lwip/apps/netbiosns.h" path="../../../../LwIP/include/lwip/apps/netbiosns.h" type="1"/>
+    <File name="core/ipv6/ip6.c" path="../../../../LwIP/core/ipv6/ip6.c" type="1"/>
+    <File name="boards/SK-iM880A/rtc-board.c" path="../../../../src/boards/SK-iM880A/rtc-board.c" type="1"/>
+    <File name="include/netif/ppp/pppol2tp.h" path="../../../../LwIP/include/netif/ppp/pppol2tp.h" type="1"/>
+    <File name="netif/ppp/polarssl/arc4.c" path="../../../../LwIP/netif/ppp/polarssl/arc4.c" type="1"/>
+    <File name="netif/virtualloraif.c" path="../../../../LwIP/netif/virtualloraif.c" type="1"/>
+    <File name="include/netif/schcCompressor.h" path="../../../../LwIP/include/netif/schcCompressor.h" type="1"/>
+    <File name="include/lwip/inet_chksum.h" path="../../../../LwIP/include/lwip/inet_chksum.h" type="1"/>
+    <File name="apps/LoRaMac/classA/SK-iM880A" path="" type="2"/>
+    <File name="include/lwip/ip6.h" path="../../../../LwIP/include/lwip/ip6.h" type="1"/>
+    <File name="netif/ppp/magic.c" path="../../../../LwIP/netif/ppp/magic.c" type="1"/>
+    <File name="include/netif" path="" type="2"/>
+    <File name="include/lwip/netif.h" path="../../../../LwIP/include/lwip/netif.h" type="1"/>
+    <File name="boards/SK-iM880A/STM32L1xx_HAL_Driver/stm32l1xx_hal_spi_ex.c" path="../../../../src/boards/mcu/stm32/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi_ex.c" type="1"/>
+    <File name="netif/ppp/ipv6cp.c" path="../../../../LwIP/netif/ppp/ipv6cp.c" type="1"/>
+    <File name="boards/SK-iM880A/STM32L1xx_HAL_Driver/stm32l1xx_hal.c" path="../../../../src/boards/mcu/stm32/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c" type="1"/>
+    <File name="boards/mcu" path="" type="2"/>
+    <File name="apps/picocoap/coap.h" path="../../../../LwIP/apps/picocoap/coap.h" type="1"/>
+    <File name="include/lwip/ip4_frag.h" path="../../../../LwIP/include/lwip/ip4_frag.h" type="1"/>
+    <File name="include/lwip" path="" type="2"/>
+    <File name="include/lwip/dns.h" path="../../../../LwIP/include/lwip/dns.h" type="1"/>
+    <File name="radio/sx1272.c" path="../../../../src/radio/sx1272/sx1272.c" type="1"/>
+    <File name="include/lwip/memp.h" path="../../../../LwIP/include/lwip/memp.h" type="1"/>
+    <File name="include/netif/ppp/eap.h" path="../../../../LwIP/include/netif/ppp/eap.h" type="1"/>
+    <File name="include/lwip/priv/api_msg.h" path="../../../../LwIP/include/lwip/priv/api_msg.h" type="1"/>
+    <File name="core/raw.c" path="../../../../LwIP/core/raw.c" type="1"/>
+    <File name="include/netif/ppp/lcp.h" path="../../../../LwIP/include/netif/ppp/lcp.h" type="1"/>
+    <File name="system/i2c.c" path="../../../../src/system/i2c.c" type="1"/>
+    <File name="include/netif/ppp/pppoe.h" path="../../../../LwIP/include/netif/ppp/pppoe.h" type="1"/>
+    <File name="boards/SK-iM880A/STM32L1xx_HAL_Driver" path="" type="2"/>
+  </Files>
+</Project>
